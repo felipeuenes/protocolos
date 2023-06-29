@@ -1,17 +1,22 @@
 .formulario{
-    background-color: #D9D9D9;
+    background-color: #ffffff;
     height: 100vh;
-    width: 78.1rem;
+    width: 73.0rem;
 }
 
+label{
+    font-size: 15px;
+}
 
 .formulario h1{
     text-align: center;
     margin-top: 6.0rem;
+    margin-bottom: 2.0rem;
 }
 
 .inputs{
     display: flex;
+    
 }
 
 .inputs section{
@@ -19,6 +24,23 @@
     flex-direction: column;
     width: 80%;
     padding: 0rem 8.0rem 1.0rem 8.0rem ;
+    margin: 0 auto;
+}
+
+select{
+    background-color: #d3d3d3;
+    color: rgb(0, 0, 0);
+}
+
+#datas{
+    width: 15.0rem;
+    padding: 0.8rem;
+}
+
+input{
+    background-color: #d3d3d3;
+    color: rgb(0, 0, 0);
+    padding: .8rem;
 }
 
 
@@ -32,4 +54,27 @@
 
 textarea{
     resize: none;
+    border-radius: 1.4rem;
+    padding: 1.6rem;
+}
+
+.inputs section button{
+    height: 3.0rem;
+    width: 30.0rem;
+    margin: 0 auto;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 1.0rem;
+
+}
+
+.inputs section button:hover{
+    cursor: pointer;
+    background-color: rgb(0, 95, 0);
+}
+
+#logo{
+    width: 7.0rem;
+    margin: 0 auto;
 }

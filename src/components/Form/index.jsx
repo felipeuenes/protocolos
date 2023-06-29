@@ -9,6 +9,9 @@ export function Form(){
     const { register, handleSubmit } = useForm();
 
 
+   
+
+
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
@@ -28,15 +31,13 @@ export function Form(){
             doc.text(`Observações: ${data.obs}  `, 30, 100);
             doc.save("protocolo.pdf");
 
+            doc.addImage('./timbre2023',0 , 0)
+
 
             // Carregue a imagem do cabeçalho
            
 
-            const imageData = "";
-
-            doc.addImage(imageData, 'PNG', 0, 0, 320, 50);
-            doc.addImage('./timbre2023.png', 'PNG', 10, 10, 50, 50);
-
+            
                         
  
             console.log(data);
@@ -59,7 +60,7 @@ export function Form(){
 
             <div className='inputs'>
                 <section>
-                    <label htmlFor="servico">Tipo de serviço</label>
+                    <label htmlFor="servico">Tipo de serviço:</label>
                     <select name="" id="servico" {...register('servico')}>
                         <option value="320">Atendimento com contadora</option>
                         <option value="450">Atendimento abertura de MEI</option>
@@ -68,10 +69,12 @@ export function Form(){
                 </section>
             </div>
 
+                   
+
             <div className='inputs'>
                 <section>
                     <label htmlFor="data">Data:</label>
-                    <input type="date" {...register('data')}/>
+                    <input type="date" {...register('data')} id='datas'/>
                 </section>
               
             </div>
@@ -79,7 +82,7 @@ export function Form(){
             <div className='inputs'>
                 <section>
                     <label htmlFor="obs">Observações:</label>
-                    <textarea name="" id="obs" cols="30" rows="10" {...register('obs')}></textarea>
+                    <textarea name="" id="obs" cols="30" rows="8" {...register('obs')}></textarea>
                 </section>
             </div>
             
@@ -88,10 +91,16 @@ export function Form(){
                    <button>Gerar protocolo</button>
                 </section>
             </div>
+            <div className='inputs'>
+                    <section>
+                        <img src="./logo.png" alt="logomarca" id='logo'/>
+                    </section>
+            </div>
 
             </form>
 
 
         </div>
+        
     )
 }
