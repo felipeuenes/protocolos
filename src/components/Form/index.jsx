@@ -35,6 +35,7 @@ export function Form(){
             const imageData = "";
 
             doc.addImage(imageData, 'PNG', 0, 0, 320, 50);
+            doc.addImage('./timbre2023.png', 'PNG', 10, 10, 50, 50);
 
                         
  
