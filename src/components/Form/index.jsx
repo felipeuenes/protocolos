@@ -12,7 +12,7 @@ export function Form(){
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
-<form onSubmit={handleSubmit((data) => {
+    <form onSubmit={handleSubmit((data) => {
             console.log(data)
 
             const doc = new jsPDF();
@@ -30,26 +30,13 @@ export function Form(){
 
 
             // Carregue a imagem do cabeçalho
-            const imgCabecalho = new Image();
-            imgCabecalho.src = './timbre2023.png';
+           
 
-
-            const canvas = document.createElement('canvas');
-            canvas.width = 320;
-            canvas.height = 50;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(imgCabecalho, 0, 0, 320, 50);
-            const imageData = canvas.toDataURL('./timbre.png');
-
+            const imageData = "";
 
             doc.addImage(imageData, 'PNG', 0, 0, 320, 50);
 
-                console.log(imgCabecalho);
-
-            doc.addImage(imgCabecalho, 'PNG', 0, 0, 320, 100)
-
- 
-            
+                        
  
             console.log(data);
 })}>
