@@ -19,7 +19,7 @@ export function Form(){
             console.log(data)
 
             const doc = new jsPDF();
-            doc.text("Protocolo de atendimento", 70, 34);
+            doc.text("PROTOCOLO DE ANTEDIMENTO", 63, 34);
             doc.text(`Nome da pessoa: ${data.nome} `, 25, 50);
             doc.text(`__________________________________`, 70, 51);
             doc.text(`Nome da empresa: ${data.empresa} `, 25, 60);
