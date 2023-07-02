@@ -9,11 +9,21 @@ export function Form(){
     const { register, handleSubmit } = useForm()
 
    
+
+
+
+   
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
     <form onSubmit={handleSubmit((data) => {
             console.log(data)
+
+            const hoje = new Date()
+            hoje.getHours()
+            console.log(hoje.getHours());
+            
+        
 
             const doc = new jsPDF();
             doc.text("PROTOCOLO DE ANTEDIMENTO", 63, 34);
@@ -25,15 +35,15 @@ export function Form(){
             doc.text(`________________________________________`, 55, 71);
             doc.text(`Data: ${data.data} `, 25, 80);
             doc.text(`__________`, 38, 81);
-            doc.text(`Numero do protocolo: ${data.servico}${data.data} `, 95, 80);
+            doc.text(`Numero do protocolo: ${data.servico}${data.data}${hoje.getHours()}${hoje.getMinutes()}`, 95, 80);
             doc.text(`__________`, 150, 81);
             doc.text(`Observações: ${data.obs}  `, 25, 100);
             doc.text(`- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -`, 0, 150)
-            doc.text(`VIA DO CLIENTE`, 80, 175);
-            doc.text(`Assinatura:`, 52, 200);
-            doc.text(`___________________________`, 25, 193);
-            doc.text(`Numero do protocolo:`, 130, 193);
-            doc.text(`${data.servico}${data.data} `, 135, 200);
+            doc.text(`VIA DO CLIENTE`, 80, 190);
+            doc.text(`Assinatura:`, 52, 213);
+            doc.text(`___________________________`, 25, 206);
+            doc.text(`Numero do protocolo:`, 130, 204);
+            doc.text(`${data.servico}${data.data} `, 135, 210);
             
 
             // doc.addImage('./timbre2023.png',0 , 0, 100, 100)
@@ -51,9 +61,10 @@ export function Form(){
 
             // Adicionar a imagem ao documento PDF
             doc.addImage(img, 'JPEG', 10, 3, 230, 22);
-            doc.addImage(img, 'JPEG', 10, 3, 230, 22);
             doc.addImage(imgBaixo, 'JPEG', 0, 125, 210, 20);
-           
+            
+            doc.addImage(img, 'JPEG', 10, 150, 230, 22);
+            doc.addImage(imgBaixo, 'JPEG', 0, 220, 210, 20);
 
             doc.save("protocolo.pdf");
         }
