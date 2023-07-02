@@ -9,8 +9,6 @@ export function Form(){
     const { register, handleSubmit } = useForm()
 
    
-
-
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
@@ -20,13 +18,15 @@ export function Form(){
             const doc = new jsPDF();
             doc.text("PROTOCOLO DE ANTEDIMENTO", 63, 34);
             doc.text(`Nome da pessoa: ${data.nome} `, 25, 50);
-            doc.text(`__________________________________`, 70, 51);
+            doc.text(`___________________________________`, 70, 51);
             doc.text(`Nome da empresa: ${data.empresa} `, 25, 60);
             doc.text(`__________________________________`, 73, 61);
-            doc.text(`Data: ${data.data} `, 25, 75);
-            doc.text(`__________`, 38, 76);
-            doc.text(`Numero do protocolo: ${data.servico}${data.data} `, 95, 75);
-            doc.text(`__________`, 150, 76);
+            doc.text(`Refere-se a: ${data.refere}`, 25, 70);
+            doc.text(`________________________________________`, 55, 71);
+            doc.text(`Data: ${data.data} `, 25, 80);
+            doc.text(`__________`, 38, 81);
+            doc.text(`Numero do protocolo: ${data.servico}${data.data} `, 95, 80);
+            doc.text(`__________`, 150, 81);
             doc.text(`Observações: ${data.obs}  `, 25, 100);
             
 
@@ -73,6 +73,12 @@ export function Form(){
                 <section>
                     <label htmlFor="empresa">Nome da empresa:</label>
                     <input type="text" {...register('empresa')}/>
+                </section>
+            </div>
+            <div className='inputs'>
+                <section>
+                    <label htmlFor="refere">Refere-se a:</label>
+                    <input type="text" {...register('refere')}/>
                 </section>
             </div>
 
