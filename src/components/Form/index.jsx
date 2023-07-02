@@ -10,7 +10,13 @@ export function Form(){
 
    
 
-
+    let data = new Date();
+    let dia = String(data.getDate()).padStart(2, '0');
+    let mes = String(data.getMonth() + 1).padStart(2, '0');
+    let ano = data.getFullYear();
+    let dateAtual = dia + '/' + mes + '/' + ano;
+    console.log(dateAtual);
+    let dataProtocolo = dia + mes + ano;
 
    
     return(
@@ -21,7 +27,10 @@ export function Form(){
 
             const hoje = new Date()
             hoje.getHours()
-            console.log(hoje.getHours());
+            // console.log(hoje.getHours());
+     
+            
+
             
         
 
@@ -33,17 +42,17 @@ export function Form(){
             doc.text(`__________________________________`, 73, 61);
             doc.text(`Refere-se a: ${data.refere}`, 25, 70);
             doc.text(`________________________________________`, 55, 71);
-            doc.text(`Data: ${data.data} `, 25, 80);
+            doc.text(`Data: ${dateAtual} `, 25, 80);
             doc.text(`__________`, 38, 81);
-            doc.text(`Numero do protocolo: ${data.servico}${data.data}${hoje.getHours()}${hoje.getMinutes()}`, 95, 80);
-            doc.text(`__________`, 150, 81);
+            doc.text(`Número do protocolo: ${data.servico}${dataProtocolo}${hoje.getHours()}${hoje.getMinutes()}`, 75, 80);
+            doc.text(`________________`, 130, 81);
             doc.text(`Observações: ${data.obs}  `, 25, 100);
             doc.text(`- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -`, 0, 150)
             doc.text(`VIA DO CLIENTE`, 80, 190);
             doc.text(`Assinatura:`, 52, 213);
             doc.text(`___________________________`, 25, 206);
             doc.text(`Numero do protocolo:`, 130, 204);
-            doc.text(`${data.servico}${data.data} `, 135, 210);
+            doc.text(`${data.servico}${dataProtocolo}${hoje.getHours()}${hoje.getMinutes()}`, 135, 210);
             
 
             // doc.addImage('./timbre2023.png',0 , 0, 100, 100)
@@ -64,7 +73,7 @@ export function Form(){
             doc.addImage(imgBaixo, 'JPEG', 0, 125, 210, 20);
             
             doc.addImage(img, 'JPEG', 10, 150, 230, 22);
-            doc.addImage(imgBaixo, 'JPEG', 0, 220, 210, 20);
+            doc.addImage(imgBaixo, 'JPEG', 0, 230, 210, 20);
 
             doc.save("protocolo.pdf");
         }
