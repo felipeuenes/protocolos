@@ -142,11 +142,11 @@ export function Form(){
                    <button>Gerar protocolo</button>
                 </section>
             </div>
-            <div className='inputs'>
+            {/* <div className='inputs'>
                     <section>
                         <img src="./logo.png" alt="logomarca" id='logo'/>
                     </section>
-            </div>
+            </div> */}
 
             </form>
 
