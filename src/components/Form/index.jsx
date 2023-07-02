@@ -28,6 +28,12 @@ export function Form(){
             doc.text(`Numero do protocolo: ${data.servico}${data.data} `, 95, 80);
             doc.text(`__________`, 150, 81);
             doc.text(`Observações: ${data.obs}  `, 25, 100);
+            doc.text(`- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -`, 0, 150)
+            doc.text(`VIA DO CLIENTE`, 80, 175);
+            doc.text(`Assinatura:`, 52, 200);
+            doc.text(`___________________________`, 25, 193);
+            doc.text(`Numero do protocolo:`, 130, 193);
+            doc.text(`${data.servico}${data.data} `, 135, 200);
             
 
             // doc.addImage('./timbre2023.png',0 , 0, 100, 100)
@@ -44,6 +50,7 @@ export function Form(){
            
 
             // Adicionar a imagem ao documento PDF
+            doc.addImage(img, 'JPEG', 10, 3, 230, 22);
             doc.addImage(img, 'JPEG', 10, 3, 230, 22);
             doc.addImage(imgBaixo, 'JPEG', 0, 125, 210, 20);
            
