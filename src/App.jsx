@@ -1,13 +1,13 @@
 
 import './App.css'
-import { Form } from './components/Form'
+import { Formu } from './components/Form'
 
 export function App() {
 
 
   return (
     <div className='geral'>
-      <Form/>
+      <Formu/>
     </div>
   )
 }

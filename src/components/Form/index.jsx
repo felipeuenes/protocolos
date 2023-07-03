@@ -1,10 +1,12 @@
 import './style.css'
 import { jsPDF } from "jspdf";
 import { useForm } from 'react-hook-form'
+import { Input, Form } from 'antd';
 
+// import { Select } from 'antd';
+// import { Option } from 'antd/es/mentions';
 
-
-export function Form(){
+export function Formu(){
 
     const { register, handleSubmit } = useForm()
 
@@ -22,17 +24,15 @@ export function Form(){
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
-    <form onSubmit={handleSubmit((data) => {
+    <Form onSubmit={handleSubmit((data) => {
+
             console.log(data)
 
             const hoje = new Date()
             hoje.getHours()
-            // console.log(hoje.getHours());
-     
+            // console.log(hoje.getHours());          
             
-
-            
-        
+            console.log(data.servico);
 
             const doc = new jsPDF();
             doc.text("PROTOCOLO DE ANTEDIMENTO", 63, 34);
@@ -90,22 +90,32 @@ export function Form(){
 
     
             <div className='inputs'>
+                
                 <section>
+                    <Form.Item>
+
                     <label htmlFor="nome">Nome da pessoa:</label>
-                    <input type="text" {...register('nome')}/>
+                    <Input type="text" {...register('nome')}/>
+                    </Form.Item>
                 </section>
             </div>
 
             <div className='inputs'>
                 <section>
+                    <Form.Item>
+
                     <label htmlFor="empresa">Nome da empresa:</label>
-                    <input type="text" {...register('empresa')}/>
+                    <Input type="text" {...register('empresa')}/>
+                    </Form.Item>
                 </section>
             </div>
             <div className='inputs'>
                 <section>
+                    <Form.Item>
+
                     <label htmlFor="refere">Refere-se a:</label>
-                    <input type="text" {...register('refere')}/>
+                    <Input type="text" {...register('refere')}/>
+                    </Form.Item>
                 </section>
             </div>
 
@@ -117,6 +127,19 @@ export function Form(){
                         <option value="450">Atendimento abertura de MEI</option>
                         <option value="410">Atendimento diversos</option>
                     </select>
+
+        {/* <Select
+                // mode="multiple"
+                style={{ width: '100%' }}
+                placeholder="Selecione os valores"
+                {...register('servicos')}>
+                <Option value="150">Visitas em geral</Option>
+
+
+                <Option value="250">Atendimento para prestação de serviço</Option>
+                <Option value="350">Assinamento de documento no ambiente interno</Option>
+                <Option value="450">Consultorias; Mentorias; Visitas da Gerente do Empreenda Mais</Option>
+      </Select> */}
                 </section>
             </div>
 
@@ -124,22 +147,30 @@ export function Form(){
 
             <div className='inputs'>
                 <section>
+                    <Form.Item>
+
                     <label htmlFor="data">Data:</label>
-                    <input type="date" {...register('data')} id='datas'/>
+                    <Input type="date" {...register('data')} id='datas'/>
+                    </Form.Item>
                 </section>
               
             </div>
 
             <div className='inputs'>
                 <section>
+                    <Form.Item>
+
                     <label htmlFor="obs">Observações:</label>
                     <textarea name="" id="obs" cols="30" rows="8" {...register('obs')}></textarea>
+                    </Form.Item>
                 </section>
             </div>
             
             <div className='inputs'>
                 <section>
-                   <button>Gerar protocolo</button>
+                    <Form.Item>
+                         <button type='primary'>Gerar protocolo</button>
+                    </Form.Item>
                 </section>
             </div>
             {/* <div className='inputs'>
@@ -148,7 +179,7 @@ export function Form(){
                     </section>
             </div> */}
 
-            </form>
+            </Form>
 
 
         </div>

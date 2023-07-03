@@ -38,17 +38,17 @@ select{
 }
 
 input{
-    background-color: #d3d3d3;
-    color: rgb(0, 0, 0);
+    /* background-color: #d3d3d3;
+    color: rgb(0, 0, 0); */
     padding: .8rem;
 }
 
 
 .inputs section input, select{
     height: 3.0rem;
-    border-radius: 1.4rem;
+    /* border-radius: 1.4rem;
     border: none;
-    
+     */
 }
 
 
