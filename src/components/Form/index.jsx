@@ -1,7 +1,7 @@
 import './style.css'
 import { jsPDF } from "jspdf";
 import { useForm } from 'react-hook-form'
-import { Input, Form } from 'antd';
+// import { Input, Form } from 'antd';
 
 // import { Select } from 'antd';
 // import { Option } from 'antd/es/mentions';
@@ -24,7 +24,7 @@ export function Formu(){
     return(
         <div className='formulario'>
             <h1>Protocolos</h1>
-    <Form onSubmit={handleSubmit((data) => {
+    <form onSubmit={handleSubmit((data) => {
 
             console.log(data)
 
@@ -92,30 +92,29 @@ export function Formu(){
             <div className='inputs'>
                 
                 <section>
-                    <Form.Item>
+                   
 
                     <label htmlFor="nome">Nome da pessoa:</label>
-                    <Input type="text" {...register('nome')}/>
-                    </Form.Item>
+                    <input type="text" {...register('nome')}/>
+                    
                 </section>
             </div>
 
             <div className='inputs'>
                 <section>
-                    <Form.Item>
-
+                    
                     <label htmlFor="empresa">Nome da empresa:</label>
-                    <Input type="text" {...register('empresa')}/>
-                    </Form.Item>
+                    <input type="text" {...register('empresa')}/>
+                    
                 </section>
             </div>
             <div className='inputs'>
                 <section>
-                    <Form.Item>
+                    
 
                     <label htmlFor="refere">Refere-se a:</label>
-                    <Input type="text" {...register('refere')}/>
-                    </Form.Item>
+                    <input type="text" {...register('refere')}/>
+                    
                 </section>
             </div>
 
@@ -123,9 +122,12 @@ export function Formu(){
                 <section>
                     <label htmlFor="servico">Tipo de serviço:</label>
                     <select name="" id="servico" {...register('servico')}>
-                        <option value="320">Atendimento com contadora</option>
-                        <option value="450">Atendimento abertura de MEI</option>
-                        <option value="410">Atendimento diversos</option>
+                        <option value="150">Visitas em geral</option>
+                        <option value="250">Prestação de serviços</option>
+                        <option value="350">Assinamento de documento no ambiente interno</option>
+                        <option value="450">Consultorias; Mentorias; Visitas da Gerente do Empreenda Mais</option>
+                        <option value="550">Acompanhamento de especialistas ou parceiros - mentorias ou consultorias</option>
+                        <option value="650">Palestras; oficinas; outros</option>
                     </select>
 
         {/* <Select
@@ -147,30 +149,28 @@ export function Formu(){
 
             <div className='inputs'>
                 <section>
-                    <Form.Item>
 
                     <label htmlFor="data">Data:</label>
-                    <Input type="date" {...register('data')} id='datas'/>
-                    </Form.Item>
+                    <input type="date" {...register('data')} id='datas'/>
+                 
                 </section>
               
             </div>
 
             <div className='inputs'>
                 <section>
-                    <Form.Item>
-
+            
                     <label htmlFor="obs">Observações:</label>
                     <textarea name="" id="obs" cols="30" rows="8" {...register('obs')}></textarea>
-                    </Form.Item>
+                    
                 </section>
             </div>
             
             <div className='inputs'>
                 <section>
-                    <Form.Item>
-                         <button type='primary'>Gerar protocolo</button>
-                    </Form.Item>
+                    
+                         <button>Gerar protocolo</button>
+                
                 </section>
             </div>
             {/* <div className='inputs'>
@@ -179,7 +179,7 @@ export function Formu(){
                     </section>
             </div> */}
 
-            </Form>
+            </form>
 
 
         </div>
