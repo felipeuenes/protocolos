@@ -95,7 +95,7 @@ export function Formu(){
                    
 
                     <label htmlFor="nome">Nome da pessoa:</label>
-                    <input type="text" {...register('nome')}/>
+                    <input type="text" {...register('nome')} placeholder='Nome completo...'/>
                     
                 </section>
             </div>
@@ -113,7 +113,7 @@ export function Formu(){
                     
 
                     <label htmlFor="refere">Refere-se a:</label>
-                    <input type="text" {...register('refere')}/>
+                    <input type="text" {...register('refere')} />
                     
                 </section>
             </div>
