@@ -48,11 +48,11 @@ export function Formu(){
             doc.text(`________________`, 130, 81);
             doc.text(`Observações: ${data.obs}  `, 25, 100);
             doc.text(`- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -`, 0, 150)
-            doc.text(`VIA DO CLIENTE`, 80, 190);
-            doc.text(`Assinatura:`, 52, 213);
-            doc.text(`___________________________`, 25, 206);
-            doc.text(`Numero do protocolo:`, 130, 204);
-            doc.text(`${data.servico}${dataProtocolo}${hoje.getHours()}${hoje.getMinutes()}`, 135, 210);
+            doc.text(`VIA DO CLIENTE`, 80, 200);
+            doc.text(`Assinatura:`, 52, 223);
+            doc.text(`___________________________`, 25, 216);
+            doc.text(`Numero do protocolo:`, 130, 214);
+            doc.text(`${data.servico}${dataProtocolo}${hoje.getHours()}${hoje.getMinutes()}`, 135, 220);
             
 
             // doc.addImage('./timbre2023.png',0 , 0, 100, 100)
@@ -72,8 +72,8 @@ export function Formu(){
             doc.addImage(img, 'JPEG', 10, 3, 230, 22);
             doc.addImage(imgBaixo, 'JPEG', 0, 125, 210, 20);
             
-            doc.addImage(img, 'JPEG', 10, 150, 230, 22);
-            doc.addImage(imgBaixo, 'JPEG', 0, 230, 210, 20);
+            doc.addImage(img, 'JPEG', 10, 160, 230, 22);
+            doc.addImage(imgBaixo, 'JPEG', 0, 250, 210, 20);
 
             doc.save("protocolo.pdf");
         }
